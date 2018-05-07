@@ -1,0 +1,71 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# forcatsmisc
+
+Factor variables have long been a pain in handling in R. While the [forcats package](http://forcats.tidyverse.org/reference/index.html) has alleviated many of the difficulties associated in handling factor variables, I have found from time to time other needs in wrangling those variables which are unworthy of belonging to the forcats package. They will therefore live here instead.
+
+## Installation
+
+You can install forcatsmisc from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("philstraforelli/forcatsmisc")
+```
+
+## Example
+
+Currently, there are 4 functions available in this package:
+
+### fct_recode_if()
+
+It's sometimes handy to recode a factor level on a predicate, particularly when used in a shiny reactive environment.
+
+```{r fct_recode_if_example}
+df <- data.frame(x = factor(c("apple", "bear", "banana", "dear")),
+                 y = factor(c("fruit", "animal", "fruit", "animal")))
+
+dplyr::mutate(df, x = fct_recode_if(x, y == "animal", "not a fruit"))
+```
+
+### fct_to_num()
+
+One of the [most upvoted R questions on StackOverflow](https://stackoverflow.com/questions/3418128/how-to-convert-a-factor-to-integer-numeric-without-loss-of-information) is a way to handle situations when a numeric variable was erroneously convered to a factor variable, and you want it converted back to numeric - A frustrating situation that occurs surprisingly often. It's possible that the question's popularity may have led to the decision that it wasn't worth formalizing the solution into its own function, I decided otherwise and formalized it into this function. 
+
+```{r fct_to_num_example}
+var <- factor(c("1", "2", "3"))
+
+fct_to_num(var)
+```
+
+### fct_wrap()
+
+One annoyance I often run into is that I want to use a factor variable as a categorical axis in a plot, but one or more of the factor levels is very long. I then make the mistake of using [str_wrap()](https://stringr.tidyverse.org/reference/str_wrap.html), which converts my factor variable back to a string variable, thus losing the order of levels I have set earlier! Grrrr... Well, in such situations, use `fct_wrap()` instead.
+
+```{r fct_wrap_example}
+var <- factor(c("a very, very, very, very long factor level", "an even longer, unbelievably longer, factor level"))
+
+fct_wrap(var, width = 10)
+```
+
+### lvl_range()
+
+One thing I've been doing more and more often in a shiny app is to place the scales of a factor variable using [shinyWidgets::sliderTextInput()](https://github.com/dreamRs/shinyWidgets#slider-text). The `lvl_range()` was created to make it easier to handle the output of the UI function on the backend (such as when filtering the data to include only the range of factor levels selected).
+
+![sliderTextInput()](https://raw.githubusercontent.com/dreamRs/shinyWidgets/master/inst/images/sliderText.png)
+
+```{r lvl_range_example}
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "very unlikely"))
+
+lvl_range(var, c("Very likely", "Somewhat unlikely"))
+```
