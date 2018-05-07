@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-```{r, echo = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -23,7 +23,7 @@ You can install forcatsmisc from github with:
 devtools::install_github("philstraforelli/forcatsmisc")
 ```
 
-## Example
+## Examples
 
 Currently, there are 4 functions available in this package:
 
@@ -60,9 +60,7 @@ fct_wrap(var, width = 10)
 
 ### lvl_range()
 
-One thing I've been doing more and more often in a shiny app is to place the scales of a factor variable using [shinyWidgets::sliderTextInput()](https://github.com/dreamRs/shinyWidgets#slider-text). The `lvl_range()` was created to make it easier to handle the output of the UI function on the backend (such as when filtering the data to include only the range of factor levels selected).
-
-![sliderTextInput()](https://raw.githubusercontent.com/dreamRs/shinyWidgets/master/inst/images/sliderText.png)
+One thing I've been doing more and more often in a shiny app is to place the scales of a factor variable using [shinyWidgets::sliderTextInput()](https://github.com/dreamRs/shinyWidgets#slider-text) and let the user select a range they want displayed. The `lvl_range()` was created to make it easier to handle the output of the UI function on the backend (such as when filtering the data to include only the range of factor levels selected).
 
 ```{r lvl_range_example}
 var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "very unlikely"))
