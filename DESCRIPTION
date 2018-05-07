@@ -1,0 +1,17 @@
+Package: forcatsmisc
+Title: Additional functions for forcats
+Version: 0.1.0
+Authors@R: person("Phil", "Straforelli", role=c("aut", "cre"),
+    email = "pstraforelli@gmail.com")
+Description: There are some additional handling of factor levels that are handy, 
+    but which are not worth including in the forcats package. They will live here instead.
+Depends: R (>= 3.4.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: dplyr,
+    stringr,
+    forcats
+URL: https://github.com/philstraforelli/forcatsmisc
+BugReports: https://github.com/philstraforelli/forcatsmisc/issues
