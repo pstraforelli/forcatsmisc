@@ -1,6 +1,6 @@
 Package: forcatsmisc
 Title: Additional functions for forcats
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Phil", "Straforelli", role=c("aut", "cre"),
     email = "pstraforelli@gmail.com")
 Description: There are some additional handling of factor levels that are handy, 
