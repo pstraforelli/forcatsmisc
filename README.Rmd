@@ -19,8 +19,8 @@ Factor variables have long been a pain in handling in R. While the [forcats pack
 You can install forcatsmisc from github with:
 
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("philstraforelli/forcatsmisc")
+# install.packages("remotes")
+remotes::install_github("philstraforelli/forcatsmisc")
 ```
 
 ## Examples
@@ -35,7 +35,7 @@ It's sometimes handy to recode a factor level on a predicate, particularly when 
 df <- data.frame(x = factor(c("apple", "bear", "banana", "dear")),
                  y = factor(c("fruit", "animal", "fruit", "animal")))
 
-dplyr::mutate(df, x = fct_recode_if(x, y == "animal", "not a fruit"))
+dplyr::mutate(df, x = forcatsmisc::fct_recode_if(x, y == "animal", "not a fruit"))
 ```
 
 ### fct_to_num()
@@ -45,7 +45,7 @@ One of the [most upvoted R questions on StackOverflow](https://stackoverflow.com
 ```{r fct_to_num_example}
 var <- factor(c("1", "2", "3"))
 
-fct_to_num(var)
+forcatsmisc::fct_to_num(var)
 ```
 
 ### fct_wrap()
@@ -55,7 +55,7 @@ One annoyance I often run into is that I want to use a factor variable as a cate
 ```{r fct_wrap_example}
 var <- factor(c("a very, very, very, very long factor level", "an even longer, unbelievably longer, factor level"))
 
-fct_wrap(var, width = 10)
+forcatsmisc::fct_wrap(var, width = 10)
 ```
 
 ### lvl_range()
@@ -65,5 +65,5 @@ One thing I've been doing more and more often in a shiny app is to place the sca
 ```{r lvl_range_example}
 var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "very unlikely"))
 
-lvl_range(var, c("Very likely", "Somewhat unlikely"))
+forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
 ```
