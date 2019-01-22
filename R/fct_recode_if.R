@@ -16,5 +16,6 @@
 fct_recode_if <- function(f, cond, level) {
   f <- forcats::fct_expand(f, level)
   f[cond] <- level
+  f <- forcats::fct_drop(f)
   f
 }
