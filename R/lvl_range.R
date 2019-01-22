@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "very unlikely"))
+#' var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 #' lvl_range(var, c("Very likely", "Somewhat unlikely"))
 
 lvl_range <- function(f, lvls) {

@@ -88,7 +88,7 @@ of factor levels
 selected).
 
 ``` r
-var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "very unlikely"))
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 
 forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
 #> [1] "Very likely"       "Somewhat unlikely"
