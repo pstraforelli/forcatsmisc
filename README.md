@@ -93,3 +93,17 @@ var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unl
 forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
 #> [1] "Very likely"       "Somewhat unlikely"
 ```
+
+### lvl\_number()
+
+I’ve lately found a need to return the position of a particular level in
+a factor variable. For instance, in `levels(iris$Species)`, the
+“versicolor” level is in the 2nd position. This function makes it
+easier to return this.
+
+``` r
+levels(iris$Species)
+#> [1] "setosa"     "versicolor" "virginica"
+forcatsmisc::lvl_number(iris$Species, "versicolor")
+#> [1] 2
+```
