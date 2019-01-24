@@ -3,4 +3,5 @@
 export(fct_recode_if)
 export(fct_to_num)
 export(fct_wrap)
+export(lvl_number)
 export(lvl_range)
