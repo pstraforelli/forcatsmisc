@@ -11,5 +11,5 @@
 #' lvl_number(iris$Species, "versicolor")
 
 lvl_number <- function(f, lvl) {
-  base::unique(base::as.numeric(f)[base::which(f == lvl)])
+  base::match(lvl, base::levels(f))
 }
