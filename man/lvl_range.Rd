@@ -9,7 +9,7 @@ lvl_range(f, lvls)
 \arguments{
 \item{f}{A factor variable}
 
-\item{lvls}{A vector of 2 levels that you want the}
+\item{lvls}{A vector of 2 levels that you want the levels in between returned}
 }
 \value{
 A vector of the factor variable's levels located in between the levels specified, inclusive.

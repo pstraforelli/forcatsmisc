@@ -18,6 +18,7 @@ A factor variable with re-wrapped levels
 Wrap factor levels into nicely formatted paragraphs
 }
 \examples{
-var <- factor(c("a very, very, very, very long factor level", "an even longer, unbelievably longer, factor level"))
+var <- factor(c("a very, very, very, very long factor level",
+                "an even longer, unbelievably longer, factor level"))
 fct_wrap(var, width = 10)
 }
