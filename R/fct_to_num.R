@@ -5,6 +5,9 @@
 #' @return A numeric variable
 #' @export
 #'
+#' @seealso
+#' `num_to_fct()`
+#'
 #' @examples
 #' var <- factor(c("1", "2", "3"))
 #' fct_to_num(var)

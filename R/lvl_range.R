@@ -1,7 +1,7 @@
 #' Return a sub-range of levels
 #'
 #' @param f A factor variable
-#' @param lvls A vector of 2 levels that you want the
+#' @param lvls A vector of 2 levels that you want the levels in between returned
 #'
 #' @return A vector of the factor variable's levels located in between the levels specified, inclusive.
 #' @export
