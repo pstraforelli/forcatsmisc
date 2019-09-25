@@ -64,8 +64,7 @@ very long. I then make the mistake of using
 [str\_wrap()](https://stringr.tidyverse.org/reference/str_wrap.html),
 which converts my factor variable back to a string variable, thus losing
 the order of levels I have set earlier\! Grrrr… Well, in such
-situations, use `fct_wrap()`
-instead.
+situations, use `fct_wrap()` instead.
 
 ``` r
 var <- factor(c("a very, very, very, very long factor level", "an even longer, unbelievably longer, factor level"))
@@ -84,14 +83,13 @@ the scales of a factor variable using
 and let the user select a range they want displayed. The `lvl_range()`
 was created to make it easier to handle the output of the UI function on
 the backend (such as when filtering the data to include only the range
-of factor levels
-selected).
+of factor levels selected).
 
 ``` r
-var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"), levels = c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 
 forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
-#> [1] "Very likely"       "Somewhat unlikely"
+#> [1] "Very likely"       "Somewhat likely"   "Somewhat unlikely"
 ```
 
 ### lvl\_number()
