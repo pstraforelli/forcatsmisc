@@ -18,6 +18,7 @@ A vector of the factor variable's levels located in between the levels specified
 Return a sub-range of levels
 }
 \examples{
-var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"),
+             levels = c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 lvl_range(var, c("Very likely", "Somewhat unlikely"))
 }
