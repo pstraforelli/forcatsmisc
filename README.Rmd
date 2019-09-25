@@ -63,7 +63,7 @@ forcatsmisc::fct_wrap(var, width = 10)
 One thing I've been doing more and more often in a shiny app is to place the scales of a factor variable using [shinyWidgets::sliderTextInput()](https://github.com/dreamRs/shinyWidgets#slider-text) and let the user select a range they want displayed. The `lvl_range()` was created to make it easier to handle the output of the UI function on the backend (such as when filtering the data to include only the range of factor levels selected).
 
 ```{r lvl_range_example}
-var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"), levels = c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 
 forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
 ```
