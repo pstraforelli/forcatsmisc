@@ -14,7 +14,7 @@ You can install forcatsmisc from github with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("philstraforelli/forcatsmisc")
+remotes::install_github("pstraforelli/forcatsmisc")
 ```
 
 ## Examples
@@ -84,7 +84,8 @@ the backend (such as when filtering the data to include only the range
 of factor levels selected).
 
 ``` r
-var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"), levels = c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
+var <- factor(c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"), 
+              levels = c("Very likely", "Somewhat likely", "Somewhat unlikely", "Very unlikely"))
 
 forcatsmisc::lvl_range(var, c("Very likely", "Somewhat unlikely"))
 #> [1] "Very likely"       "Somewhat likely"   "Somewhat unlikely"
