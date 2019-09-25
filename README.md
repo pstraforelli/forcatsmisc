@@ -19,8 +19,6 @@ remotes::install_github("philstraforelli/forcatsmisc")
 
 ## Examples
 
-Currently, there are 4 functions available in this package:
-
 ### fct\_recode\_if()
 
 It’s sometimes handy to recode a factor level on a predicate,
