@@ -104,3 +104,14 @@ levels(iris$Species)
 forcatsmisc::lvl_number(iris$Species, "versicolor")
 #> [1] 2
 ```
+
+### fct\_label\_counts()
+
+This function easily adds counts of factors in their levels. This is
+useful for displaying in a chart how many cases there are in each level.
+
+``` r
+var <- forcatsmisc::fct_label_counts(iris$Species)
+levels(var)
+#> [1] "setosa (n=50)"     "versicolor (n=50)" "virginica (n=50)"
+```

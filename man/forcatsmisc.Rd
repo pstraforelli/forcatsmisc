@@ -3,7 +3,6 @@
 \docType{package}
 \name{forcatsmisc}
 \alias{forcatsmisc}
-\alias{forcatsmisc-package}
 \title{forcatsmisc: Additional functions for forcats}
 \description{
 There are some additional ways that the handling of factor levels can be made easier,

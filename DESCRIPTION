@@ -1,6 +1,6 @@
 Package: forcatsmisc
 Title: Additional functions for forcats
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: person("Phil", "Straforelli", role=c("aut", "cre"),
     email = "pstraforelli@gmail.com")
 Description: There are some additional handling of factor levels that are handy, 
@@ -9,7 +9,7 @@ Depends: R (>= 3.4.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Imports: dplyr,
     stringr,
     forcats
