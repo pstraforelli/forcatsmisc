@@ -10,5 +10,5 @@
 #' fct_to_num(var)
 
 fct_to_num <- function(f) {
-  base::as.numeric(base::levels(f))[f]
+  as.numeric(levels(f))[f]
 }

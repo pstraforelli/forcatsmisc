@@ -12,5 +12,5 @@
 #' lvl_range(var, c("Very likely", "Somewhat unlikely"))
 
 lvl_range <- function(f, lvls) {
-  base::levels(f)[base::which(base::levels(f) == lvls[1]):base::which(base::levels(f) == lvls[2])]
+  levels(f)[which(levels(f) == lvls[1]):which(levels(f) == lvls[2])]
 }

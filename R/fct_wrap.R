@@ -5,6 +5,7 @@
 #' @param ... Arguments passed on to `stringr::str_wrap()`
 #'
 #' @return A factor variable with re-wrapped levels
+#' @importFrom stringr str_wrap
 #' @export
 #'
 #' @examples
@@ -13,6 +14,6 @@
 #' fct_wrap(var, width = 10)
 
 fct_wrap <- function(f, ...) {
-  base::levels(f) <- stringr::str_wrap(base::levels(f), ...)
+  levels(f) <- str_wrap(levels(f), ...)
   f
 }

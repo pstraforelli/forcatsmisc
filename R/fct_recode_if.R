@@ -5,6 +5,8 @@
 #' @param level The level created based on the condition
 #'
 #' @return A factor variable with the new level added in
+#' @importFrom forcats fct_expand
+#' @importFrom forcats fct_drop
 #' @export
 #'
 #' @examples
@@ -14,8 +16,8 @@
 #' dplyr::mutate(df, x = fct_recode_if(x, y == "animal", "not a fruit"))
 
 fct_recode_if <- function(f, cond, level) {
-  f <- forcats::fct_expand(f, level)
+  f <- fct_expand(f, level)
   f[cond] <- level
-  f <- forcats::fct_drop(f)
+  f <- fct_drop(f)
   f
 }
