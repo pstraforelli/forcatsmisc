@@ -56,6 +56,16 @@ var <- factor(c("a very, very, very, very long factor level", "an even longer, u
 forcatsmisc::fct_wrap(var, width = 10)
 ```
 
+### fct_trim()
+
+Another annoyance is the inclusion of whitespace in factor levels. `fct_trim()` is the factor level version of [`str_trim()`](https://stringr.tidyverse.org/reference/str_trim.html) to answer to this issue.
+
+```{r fct_trim_example}
+var <- factor(c("  Level with trailing and leading white space\t", "\n\nLevel with trailing and leading white space\n\n"))
+
+forcatsmisc::fct_trim(var)
+```
+
 ### lvl_range()
 
 One thing I've been doing more and more often in a shiny app is to place the scales of a factor variable using [shinyWidgets::sliderTextInput()](https://github.com/dreamRs/shinyWidgets#slider-text) and let the user select a range they want displayed. The `lvl_range()` was created to make it easier to handle the output of the UI function on the backend (such as when filtering the data to include only the range of factor levels selected).
